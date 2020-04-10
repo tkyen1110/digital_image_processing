@@ -1,1 +1,3 @@
-# digital_image_processing
+# Digital Image Processing
+
+Reference: https://theailearner.com/image-processing/
