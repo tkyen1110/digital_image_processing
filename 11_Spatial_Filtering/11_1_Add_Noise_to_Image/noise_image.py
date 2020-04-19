@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from skimage.util import random_noise
 
 # Load the image
-img = cv2.imread('opencv_logo.png')
+img = cv2.imread('../opencv_logo.png')
 
 ########################################
 #             Using Scikit             #
