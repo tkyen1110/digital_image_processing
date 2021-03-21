@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Load an image
-img = cv2.imread('../opencv_logo.png', cv2.IMREAD_GRAYSCALE)
+img = cv2.imread('opencv_logo.png', cv2.IMREAD_GRAYSCALE)
 
 # Apply 3x3 and 7x7 Gaussian blur
 low_sigma = cv2.GaussianBlur(img,(3,3),0)

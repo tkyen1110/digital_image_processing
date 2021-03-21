@@ -13,17 +13,17 @@ blur = cv2.GaussianBlur(gray,(5,5),0)
 # 2. Finding Intensity Gradient of the Image
 # Apply Sobelx in high output datatype 'float32'
 # and then converting back to 8-bit to prevent overflow
-sobelx_64 = cv2.Sobel(blur,cv2.CV_32F,1,0,ksize=3)
-absx_64 = np.absolute(sobelx_64)
-sobelx_8u1 = absx_64/absx_64.max()*255
+sobelx_32f = cv2.Sobel(blur,cv2.CV_32F,1,0,ksize=3)
+absx_32f = np.absolute(sobelx_32f)
+sobelx_8u1 = absx_32f/absx_32f.max()*255
 sobelx_8u = np.uint8(sobelx_8u1)
 
 # Similarly for Sobely
-sobely_64 = cv2.Sobel(blur,cv2.CV_32F,0,1,ksize=3)
-absy_64 = np.absolute(sobely_64)
-sobely_8u1 = absy_64/absy_64.max()*255
+sobely_32f = cv2.Sobel(blur,cv2.CV_32F,0,1,ksize=3)
+absy_32f = np.absolute(sobely_32f)
+sobely_8u1 = absy_32f/absy_32f.max()*255
 sobely_8u = np.uint8(sobely_8u1)
- 
+
 # From gradients calculate the magnitude and changing
 # it to 8-bit (Optional)
 mag = np.hypot(sobelx_8u, sobely_8u)
@@ -31,7 +31,7 @@ mag = mag/mag.max()*255
 mag = np.uint8(mag)
  
 # Find the direction and change it to degree
-theta = np.arctan2(sobely_64, sobelx_64)
+theta = np.arctan2(sobely_32f, sobelx_32f)
 angle = np.rad2deg(theta)
 
 

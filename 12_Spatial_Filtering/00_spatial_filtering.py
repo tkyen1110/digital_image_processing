@@ -15,7 +15,7 @@ def convolution2d(image, kernel, pad_x, pad_y):
     return new_image
 
 
-img = cv2.imread('../opencv_logo.png', cv2.IMREAD_GRAYSCALE) 
+img = cv2.imread('opencv_logo.png', cv2.IMREAD_GRAYSCALE) 
 kernel = np.ones((5,5),np.float32)/25
 
 use_cv2_filter2D = True

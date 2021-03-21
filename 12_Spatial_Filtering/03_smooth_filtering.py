@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from skimage.util import random_noise
 
 # Load an image
-img = cv2.imread('../opencv_logo.png', cv2.IMREAD_COLOR)
+img = cv2.imread('opencv_logo.png', cv2.IMREAD_COLOR)
 
 # 1. Averaging
 blur = cv2.boxFilter(img,-1,(5,5), normalize = True)
